@@ -90,7 +90,6 @@ public class PlantContentProvider extends ContentProvider {
     @Override
     public Uri insert(@NonNull Uri uri, @Nullable ContentValues contentValues) {
         final SQLiteDatabase db = mPlantDbHelper.getWritableDatabase();
-
         // match uri
         int match = sUriMatcher.match(uri);
         Uri returnUri;
@@ -143,12 +142,9 @@ public class PlantContentProvider extends ContentProvider {
                 plantsUpdated = db.update(PlantContract.PlantEntry.TABLE_NAME, contentValues, selection, selectionArgs);
                 break;
             case PLANT_WITH_ID:
-                if (selection == null)
-                {
+                if (selection == null) {
                     selection = PlantContract.PlantEntry._ID + "=?";
-                }
-                else
-                {
+                } else {
                     selection += " AND " + PlantContract.PlantEntry._ID + "=?";
                 }
                 String id = uri.getPathSegments().get(1);

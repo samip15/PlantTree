@@ -4,13 +4,14 @@
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <ImageView
+    <com.example.planttree.ui.WaterLevelView
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         android:id="@+id/water_level"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/calendar_bg"/>
+        app:radius="50dp"
+        app:value="100"/>
 
     <TextView
         android:id="@+id/last_watered_number"

@@ -4,7 +4,11 @@ import android.net.Uri;
 import android.provider.BaseColumns;
 
 public class PlantContract {
-    public static final String AUTHORITY = "np.com.manishtuladhar.planttree";
+
+    //content://np.com.manishtuladhar.planttree/plants
+    //content://np.com.manishtuladhar.planttree/plants/plant_specfic/neem
+    //                                          0 / 1 / 2
+    public static final String AUTHORITY = "com.example.planttree";
     public static final Uri BASE_CONTENT_URI = Uri.parse("content://" + AUTHORITY);
     public static final String PATH_PLANTS = "plants";
     public static final long INVALID_PLANT_ID = -1;

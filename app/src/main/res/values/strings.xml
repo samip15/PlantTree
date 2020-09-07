@@ -14,4 +14,5 @@
     <string name="since_planted">Since planted</string>
     <string name="since_watered">Since watered</string>
     <string name="empty_view_text">Garden is empty!</string>
+    <string name="content_authority">com.example.planttree</string>
 </resources>
