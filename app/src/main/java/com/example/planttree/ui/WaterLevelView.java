@@ -34,7 +34,7 @@ public class WaterLevelView extends View {
 
         mRadius = attrArray.getDimension(R.styleable.CircleMeter_radius, 50f);
         mValue = attrArray.getInteger(R.styleable.CircleMeter_value, 100);
-        mStrokeWidth = mRadius / 20;
+        mStrokeWidth = 20f;
 
         mPaint = new Paint();
         mPaint.setStyle(Paint.Style.STROKE);

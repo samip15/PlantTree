@@ -15,4 +15,6 @@
     <string name="since_watered">Since watered</string>
     <string name="empty_view_text">Garden is empty!</string>
     <string name="content_authority">com.example.planttree</string>
+    <string name="appwidget_text">EXAMPLE</string>
+    <string name="add_widget">Add widget</string>
 </resources>

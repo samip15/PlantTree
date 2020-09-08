@@ -35,6 +35,7 @@
         android:layout_margin="24dp"
         android:src="@drawable/arrow_back_white"
         app:fabSize="normal"
+        android:onClick="onBackButtonClick"
         android:id="@+id/back_button"
         android:layout_alignParentRight="true" />
 

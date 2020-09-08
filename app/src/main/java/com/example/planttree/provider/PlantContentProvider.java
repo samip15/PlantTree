@@ -90,6 +90,7 @@ public class PlantContentProvider extends ContentProvider {
     @Override
     public Uri insert(@NonNull Uri uri, @Nullable ContentValues contentValues) {
         final SQLiteDatabase db = mPlantDbHelper.getWritableDatabase();
+
         // match uri
         int match = sUriMatcher.match(uri);
         Uri returnUri;
@@ -138,9 +139,9 @@ public class PlantContentProvider extends ContentProvider {
         int plantsUpdated;
         //match
         switch (match) {
-            case PLANTS:
-                plantsUpdated = db.update(PlantContract.PlantEntry.TABLE_NAME, contentValues, selection, selectionArgs);
-                break;
+//            case PLANTS:
+//                plantsUpdated = db.update(PlantContract.PlantEntry.TABLE_NAME, contentValues, selection, selectionArgs);
+//                break;
             case PLANT_WITH_ID:
                 if (selection == null) {
                     selection = PlantContract.PlantEntry._ID + "=?";

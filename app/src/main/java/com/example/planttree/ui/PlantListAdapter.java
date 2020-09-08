@@ -16,7 +16,6 @@ import com.example.planttree.provider.PlantContract;
 import com.example.planttree.utils.PlantUtils;
 
 public class PlantListAdapter extends RecyclerView.Adapter<PlantListAdapter.PlantViewHolder> {
-
     private Context mContext;
     private Cursor mCursor;
 
@@ -51,13 +50,14 @@ public class PlantListAdapter extends RecyclerView.Adapter<PlantListAdapter.Plan
         int imgRes = PlantUtils.getPlantImgRes(mContext,timeNow - createdAt,
                 timeNow - wateredAt, plantType);
 
+        holder.plantImageView.setImageResource(imgRes);
         holder.plantNameView.setText(String.valueOf(plantId));
         holder.plantImageView.setTag(plantId);
     }
 
     public void swapCursor(Cursor newCursor)
     {
-        if (mCursor != null) {
+        if (mCursor != null && mCursor !=newCursor) {
             mCursor.close();
         }
         mCursor = newCursor;
