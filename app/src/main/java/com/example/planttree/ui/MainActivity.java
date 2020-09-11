@@ -20,7 +20,6 @@ import com.example.planttree.R;
 import com.example.planttree.provider.PlantContract;
 
 public class MainActivity extends AppCompatActivity implements LoaderManager.LoaderCallbacks<Cursor> {
-
     private RecyclerView mPlantRV;
     private PlantListAdapter mAdapter;
 
@@ -73,5 +72,4 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
     public void onLoaderReset(@NonNull Loader<Cursor> loader) {
 
     }
-
 }

@@ -139,9 +139,9 @@ public class PlantContentProvider extends ContentProvider {
         int plantsUpdated;
         //match
         switch (match) {
-//            case PLANTS:
-//                plantsUpdated = db.update(PlantContract.PlantEntry.TABLE_NAME, contentValues, selection, selectionArgs);
-//                break;
+            case PLANTS:
+                plantsUpdated = db.update(PlantContract.PlantEntry.TABLE_NAME, contentValues, selection, selectionArgs);
+                break;
             case PLANT_WITH_ID:
                 if (selection == null) {
                     selection = PlantContract.PlantEntry._ID + "=?";

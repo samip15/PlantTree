@@ -16,11 +16,11 @@ import com.example.planttree.provider.PlantContract;
 import com.example.planttree.utils.PlantUtils;
 
 public class PlantListAdapter extends RecyclerView.Adapter<PlantListAdapter.PlantViewHolder> {
+
     private Context mContext;
     private Cursor mCursor;
 
-    PlantListAdapter(Context context,Cursor cursor)
-    {
+    PlantListAdapter(Context context, Cursor cursor) {
         this.mContext = context;
         this.mCursor = cursor;
     }
@@ -28,7 +28,7 @@ public class PlantListAdapter extends RecyclerView.Adapter<PlantListAdapter.Plan
     @NonNull
     @Override
     public PlantViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(mContext).inflate(R.layout.plant_list_item,parent,false);
+        View view = LayoutInflater.from(mContext).inflate(R.layout.plant_list_item, parent, false);
         return new PlantViewHolder(view);
     }
 
@@ -47,7 +47,7 @@ public class PlantListAdapter extends RecyclerView.Adapter<PlantListAdapter.Plan
         long timeNow = System.currentTimeMillis();
 
         // image resource that shows the plant size
-        int imgRes = PlantUtils.getPlantImgRes(mContext,timeNow - createdAt,
+        int imgRes = PlantUtils.getPlantImgRes(mContext, timeNow - createdAt,
                 timeNow - wateredAt, plantType);
 
         holder.plantImageView.setImageResource(imgRes);
@@ -55,9 +55,8 @@ public class PlantListAdapter extends RecyclerView.Adapter<PlantListAdapter.Plan
         holder.plantImageView.setTag(plantId);
     }
 
-    public void swapCursor(Cursor newCursor)
-    {
-        if (mCursor != null && mCursor !=newCursor) {
+    public void swapCursor(Cursor newCursor) {
+        if (mCursor != null && mCursor != newCursor) {
             mCursor.close();
         }
         mCursor = newCursor;
@@ -68,7 +67,7 @@ public class PlantListAdapter extends RecyclerView.Adapter<PlantListAdapter.Plan
 
     @Override
     public int getItemCount() {
-        if (mCursor == null){
+        if (mCursor == null) {
             return 0;
         }
         return mCursor.getCount();
